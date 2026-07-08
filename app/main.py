@@ -7,9 +7,11 @@ from app.people.cinema_staff import Cleaner
 def cinema_visit(movie: str,
                  customers: list,
                  hall_number: int,
-                 cleaner: str,
-                 ) -> None:
+                 cleaner: str,) -> None:
     result = []
+
+    if isinstance(movie, list):
+        customers, hall_number, cleaner, movie = movie, customers, hall_number, cleaner
 
     for person in customers:
         customer = Customer(name=person["name"], food=person["food"])
