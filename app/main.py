@@ -11,7 +11,8 @@ def cinema_visit(movie: str,
     result = []
 
     if isinstance(movie, list):
-        customers, hall_number, cleaner, movie = movie, customers, hall_number, cleaner
+        customers, hall_number, cleaner, movie = (
+            movie, customers, hall_number, cleaner)
 
     for person in customers:
         customer = Customer(name=person["name"], food=person["food"])
